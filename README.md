@@ -34,12 +34,6 @@ Example command:
 python extract_clip.py --filename /path/to/excel_file.xlsx --sheet SheetName --columnword Haber --columntimestamp Exact_Timestamp --columnid "Video ID" --output /path/to/output_folder --start_time 5 --end_time 15
 ```
 
-## Example
-
-```sh
-python extract_clip.py --filename /content/haber_ex_norm_plur_yt.xlsx --sheet pluralización --columnword Haber --columntimestamp Exact_Timestamp --columnid "Video ID" --output /content/video
-```
-
 ## Table Format
 
 The Excel file should have minimun the following columns:
