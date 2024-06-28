@@ -1,6 +1,6 @@
 
 
-# YT Clip Extractor
+# YTcut: Youtube Clip Extractor
 
 This script processes an Excel file containing YouTube video IDs and timestamps, downloads the specified videos, and extracts clips around the specified timestamps. 
 
