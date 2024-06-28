@@ -34,6 +34,8 @@ def parse_arguments():
     parser.add_argument('--columntimestamp', type=str, required=True, help='Column name for the exact timestamp')
     parser.add_argument('--columnid', type=str, required=True, help='Column name for the video ID')
     parser.add_argument('--output', type=str, required=True, help='Output folder for the videos and clips')
+    parser.add_argument('--start_time', type=int, default=10, help='Start time offset in seconds (default: 10 seconds before the timestamp)')
+    parser.add_argument('--end_time', type=int, default=10, help='End time offset in seconds (default: 10 seconds after the timestamp)')
     return parser.parse_args()
 
 # Función para descargar un video de YouTube usando yt-dlp
@@ -97,9 +99,9 @@ def main():
                 video_path = download_video(video_id, output_video_dir)
                 processed_videos.add(video_id)
 
-            # Calcular los tiempos de inicio y fin del clip (10 segundos antes y después)
-            start_time = max(exact_timestamp - 10, 0)
-            end_time = exact_timestamp + 10
+            # Calcular los tiempos de inicio y fin del clip usando los valores proporcionados o los valores predeterminados
+            start_time = max(exact_timestamp - args.start_time, 0)
+            end_time = exact_timestamp + args.end_time
 
             # Crear el nombre del archivo de salida para el clip con un entero autoincremental
             clip_output_path = os.path.join(output_clip_dir, f"{clip_counter}_{haber}_{video_id}_{exact_timestamp}_clip.mp4")
