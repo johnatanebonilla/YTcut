@@ -9,8 +9,8 @@ This script processes an Excel file containing YouTube video IDs and timestamps,
 You can clone the repository using the following link:
 
 ```sh
-git clone https://github.com/johnatanebonilla/extract_clip.git
-cd extract_clip
+git clone https://github.com/johnatanebonilla/YTcut.git
+cd YTcut
 ```
 
 The script automatically installs the required dependencies (`pandas`, `yt-dlp`, and `moviepy`). 
@@ -31,7 +31,7 @@ Run the script from the command line with the following arguments:
 Example command:
 
 ```sh
-python extract_clip.py --filename /path/to/excel_file.xlsx --sheet SheetName --columnword Haber --columntimestamp Exact_Timestamp --columnid "Video ID" --output /path/to/output_folder --start_time 5 --end_time 15
+python YTcut.py --filename /path/to/excel_file.xlsx --sheet SheetName --columnword Haber --columntimestamp Exact_Timestamp --columnid "Video ID" --output /path/to/output_folder --start_time 5 --end_time 15
 ```
 
 ## Table Format
